@@ -2,7 +2,6 @@ package dev.j3fftw.litexpansion.machine;
 
 import dev.j3fftw.extrautils.interfaces.InventoryBlock;
 import dev.j3fftw.litexpansion.Items;
-import dev.j3fftw.litexpansion.LiteXpansion;
 import dev.j3fftw.litexpansion.machine.api.PoweredMachine;
 import dev.j3fftw.litexpansion.utils.BlockMenuPresetTest;
 import dev.j3fftw.litexpansion.uumatter.UUMatter;
@@ -38,11 +37,11 @@ public class UUCrafter extends SlimefunItem implements InventoryBlock, EnergyNet
     public static final int OUTPUT_SLOT = 25;
     public static final int[] CRAFTING_SLOTS = {12, 13, 14, 21, 22, 23, 30, 31, 32};
     public static final int START_STOP = 40;
-    public static final CustomItemStack RUNNING = new CustomItemStack(
+    public static final ItemStack RUNNING = CustomItemStack.create(
         Material.GREEN_STAINED_GLASS_PANE, ChatColor.GRAY + "Click to stop"
     );
 
-    public static final CustomItemStack NOT_RUNNING = new CustomItemStack(
+    public static final ItemStack NOT_RUNNING = CustomItemStack.create(
         Material.RED_STAINED_GLASS_PANE, ChatColor.GRAY + "Click to start"
     );
 
@@ -50,9 +49,9 @@ public class UUCrafter extends SlimefunItem implements InventoryBlock, EnergyNet
 
     public UUCrafter() {
         super(Items.LITEXPANSION, Items.UU_CRAFTER, RecipeType.ENHANCED_CRAFTING_TABLE, new ItemStack[] {
-            Items.UU_MATTER, new ItemStack(Material.CRAFTING_TABLE), Items.UU_MATTER,
-            Items.CARGO_CONFIGURATOR, Items.ADVANCED_MACHINE_BLOCK, Items.GLASS_CUTTER,
-            Items.UU_MATTER, Items.UU_MATTER, Items.UU_MATTER
+            Items.UU_MATTER.item(), new ItemStack(Material.CRAFTING_TABLE), Items.UU_MATTER.item(),
+            Items.CARGO_CONFIGURATOR.item(), Items.ADVANCED_MACHINE_BLOCK.item(), Items.GLASS_CUTTER.item(),
+            Items.UU_MATTER.item(), Items.UU_MATTER.item(), Items.UU_MATTER.item()
         });
         setup();
         this.addItemHandler(

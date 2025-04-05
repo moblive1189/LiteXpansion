@@ -3,6 +3,7 @@ package dev.j3fftw.litexpansion;
 import com.google.common.base.Preconditions;
 import io.github.thebusybiscuit.slimefun4.implementation.Slimefun;
 import org.bukkit.NamespacedKey;
+import org.bukkit.Registry;
 import org.bukkit.enchantments.Enchantment;
 import org.bukkit.enchantments.EnchantmentTarget;
 import org.bukkit.inventory.ItemStack;
@@ -17,9 +18,10 @@ import java.util.Set;
 public class GlowEnchant extends Enchantment {
 
     private final Set<String> ids = new HashSet<>();
+    private final NamespacedKey key;
 
     public GlowEnchant(@Nonnull NamespacedKey key, @Nonnull String[] applicableItems) {
-        super(key);
+        this.key = key;
         ids.addAll(Arrays.asList(applicableItems));
     }
 
@@ -77,4 +79,50 @@ public class GlowEnchant extends Enchantment {
         return false;
     }
 
+    
+    /**
+     * This method is AI-generated.
+     */
+    @Nonnull
+    @Override
+    public NamespacedKey getKey() {
+        return this.key;
+    }
+
+     /**
+     * This method is AI-generated.
+     */
+    @Override
+    public NamespacedKey getKeyOrNull() {
+        return this.key;
+    }
+
+     /**
+     * This method is AI-generated.
+     */
+    @Override
+    public NamespacedKey getKeyOrThrow() {
+        if (this.key == null) {
+            throw new IllegalStateException("Key not set for this enchantment instance");
+        }
+        return this.key;
+    }
+
+     /**
+     * This method is AI-generated.
+     */
+    @Nonnull
+    @Override
+    public String getTranslationKey() {
+        return "enchantment." + this.key.getNamespace() + "." + this.key.getKey();
+    }
+
+     /**
+     * This method is AI-generated.
+     */
+    @Override
+    public boolean isRegistered() {
+        Enchantment registeredEnchantment = Registry.ENCHANTMENT.get(this.key);
+        return registeredEnchantment != null && registeredEnchantment == this;
+    }
 }
