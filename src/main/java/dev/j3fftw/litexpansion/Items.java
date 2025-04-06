@@ -583,8 +583,6 @@ public final class Items {
         "&7Converter"
     );
 
-    private static final Enchantment glowEnchant = Registry.ENCHANTMENT.get(Constants.GLOW_ENCHANT);
-
     static {
         ADVANCED_SOLAR_HELMET.addEnchantment(Enchantment.UNBREAKING, 1);
         CARBONADO_SOLAR_HELMET.addEnchantment(Enchantment.UNBREAKING, 2);
@@ -592,14 +590,6 @@ public final class Items {
         ADVANCEDLX_SOLAR_HELMET.addUnsafeEnchantment(Enchantment.UNBREAKING, 4);
         HYBRID_SOLAR_HELMET.addUnsafeEnchantment(Enchantment.UNBREAKING, 5);
         ULTIMATE_SOLAR_HELMET.addUnsafeEnchantment(Enchantment.UNBREAKING, 6);
-        ADVANCED_CIRCUIT.addEnchantment(glowEnchant, 1);
-        GLASS_CUTTER.addEnchantment(glowEnchant, 1);
-
-        DIAMOND_DRILL.addEnchantment(glowEnchant, 1);
-        LAPOTRON_CRYSTAL.addEnchantment(glowEnchant, 1);
-        ADVANCEDLX_SOLAR_HELMET.addEnchantment(glowEnchant, 1);
-        HYBRID_SOLAR_HELMET.addEnchantment(glowEnchant, 1);
-        ULTIMATE_SOLAR_HELMET.addEnchantment(glowEnchant, 1);
     }
 
     private Items() {}
